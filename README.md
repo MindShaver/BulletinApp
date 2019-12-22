@@ -1,20 +1,21 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What you need to run this project
 
-## Available Scripts
+- [Git](https://git-scm.com/downloads) and a [Github Account](https://www.github.com)
+- [Visual Studio Code](https://code.visualstudio.com/download) (or some other text editor)
+- [Node.js](https://nodejs.org/en/download/)
 
-In the project directory, you can run:
+## Setup
 
-### `npm install`
+- Clone the repository
+- Run `npm install`
+- Run `npm start`
 
-Installs all the node packages needed for this application.
+## How to contribute
 
-### `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- `git checkout -b {yourNewBranch}` to create a branch from master
+- Add your code
+- `git push -u origin {yourNewBranch}` to notify Github of your branch and push your code
+- Create a PR against master with your branch
 
 ## Learn More
 

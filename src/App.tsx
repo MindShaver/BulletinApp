@@ -3,12 +3,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import BulletinItem from "./Components/Bulletins/Item/BulletinItem";
 import BulletinList from "./Components/Bulletins/List/BulletinList";
+import Header from "./Components/Bulletins/Header/BulletinHeader";
 
 // public int App() {}
 
 const App: React.FC = () => {
   return (
     <div className="App">
+      <Header />
       <BulletinList />
     </div>
   );

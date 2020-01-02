@@ -19,6 +19,7 @@ const BulletinList: React.FC = () => {
                   votes={item.votes}
                   description={item.description}
                   id={item.id}
+                  onVote={handleUpvote}
                 />
               );
             })}

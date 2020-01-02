@@ -14,6 +14,7 @@ const BulletinList: React.FC = () => {
                   name={item.title}
                   votes={item.votes}
                   description={item.description}
+                  id={item.id}
                 />
               );
             })}

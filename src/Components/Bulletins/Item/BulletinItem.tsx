@@ -8,6 +8,7 @@ export interface IBulletinItemProps {
   votes: number;
   description: string;
   id: string;
+  onVote: (id: string) => void;
 }
 
 const BulletinItem: React.FC<IBulletinItemProps> = props => {
@@ -18,7 +19,7 @@ const BulletinItem: React.FC<IBulletinItemProps> = props => {
       </div>
       <div className="middle aligned content">
         <div className="header">
-          <a onClick={() => {}}>
+          <a onClick={() => props.onVote(props.id)}>
             <i className="large caret up icon" />
           </a>
           Votes: {props.votes}

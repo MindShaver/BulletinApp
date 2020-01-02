@@ -7,6 +7,7 @@ export interface IBulletinItemProps {
   name: string;
   votes: number;
   description: string;
+  id: string;
 }
 
 const BulletinItem: React.FC<IBulletinItemProps> = props => {

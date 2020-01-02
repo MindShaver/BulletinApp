@@ -12,7 +12,9 @@ const BulletinList: React.FC = () => {
       <div className="main ui text container">
         <div id="content">
           <div className="ui unstackable items">
-            {LocalData.map(item => {
+            {LocalData.sort((a, b) => {
+              return b.votes - a.votes;
+            }).map(item => {
               return (
                 <BulletinItem
                   name={item.title}

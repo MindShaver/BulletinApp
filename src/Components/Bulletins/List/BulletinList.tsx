@@ -1,8 +1,12 @@
 import React from "react";
 import BulletinItem from "../Item/BulletinItem";
 import LocalData from "../../../Services/LocalData";
+import { upVote } from "../../../Services/BulletinService";
 
 const BulletinList: React.FC = () => {
+  const handleUpvote = (id: string) => {
+    upVote(id);
+  };
   return (
     <div>
       <div className="main ui text container">

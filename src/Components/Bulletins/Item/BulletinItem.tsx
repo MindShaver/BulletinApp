@@ -9,6 +9,7 @@ export interface IBulletinItemProps {
   description: string;
   id: string;
   onVote: (id: string) => void;
+  removeBulletin: (id: string) => void;
 }
 
 const BulletinItem: React.FC<IBulletinItemProps> = props => {
@@ -33,6 +34,10 @@ const BulletinItem: React.FC<IBulletinItemProps> = props => {
           <img className="ui avatar image" alt="Avatar" src={AvatarImage} />
         </div>
       </div>
+
+      <button onClick={() => props.removeBulletin(props.id)} type="button">
+        X
+      </button>
     </div>
   );
 };

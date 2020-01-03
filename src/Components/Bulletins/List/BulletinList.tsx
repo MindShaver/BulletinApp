@@ -7,6 +7,9 @@ const BulletinList: React.FC = () => {
   const handleUpvote = (id: string) => {
     upVote(id);
   };
+  const handleRemove = (id: string) => {
+    alert(id);
+  };
   return (
     <div>
       <div className="main ui text container">
@@ -22,6 +25,7 @@ const BulletinList: React.FC = () => {
                   description={item.description}
                   id={item.id}
                   onVote={handleUpvote}
+                  removeBulletin={handleRemove}
                 />
               );
             })}

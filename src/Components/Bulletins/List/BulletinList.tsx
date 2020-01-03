@@ -19,7 +19,10 @@ const BulletinList: React.FC = () => {
     setBulletinState({ items: LocalData, isLoaded: true });
   }, []);
   const handleUpvote = (id: string) => {
-    upVote(id);
+    const bulletins = bulletinState.items;
+    let bulletinItem = bulletins!.find((x: IBulletinData) => x.id === id);
+    bulletinItem!.votes += 1;
+    setBulletinState({ items: bulletins, isLoaded: true });
   };
   const handleRemove = (id: string) => {
     alert(id);
@@ -29,22 +32,23 @@ const BulletinList: React.FC = () => {
       <div className="main ui text container">
         <div id="content">
           <div className="ui unstackable items">
-            {bulletinState
-              .items!.sort((a, b) => {
-                return b.votes - a.votes;
-              })
-              .map(item => {
-                return (
-                  <BulletinItem
-                    name={item.title}
-                    votes={item.votes}
-                    description={item.description}
-                    id={item.id}
-                    onVote={handleUpvote}
-                    removeBulletin={handleRemove}
-                  />
-                );
-              })}
+            {bulletinState.isLoaded &&
+              bulletinState
+                .items!.sort((a, b) => {
+                  return b.votes - a.votes;
+                })
+                .map(item => {
+                  return (
+                    <BulletinItem
+                      name={item.title}
+                      votes={item.votes}
+                      description={item.description}
+                      id={item.id}
+                      onVote={handleUpvote}
+                      removeBulletin={handleRemove}
+                    />
+                  );
+                })}
           </div>
         </div>
       </div>

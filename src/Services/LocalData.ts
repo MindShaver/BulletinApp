@@ -4,6 +4,12 @@ const apiUrl = "https://react-app-bulletins1.azurewebsites.net/api/bulletins";
 
 const LocalData: IBulletinData[] = [
   {
+    id: "123",
+    description: "Here to help with all your silver-fearing monster murders",
+    title: "Silver Selections",
+    votes: 104
+  },
+  {
     id: "b9277c30-8989-4f11-a005-437fc7854247",
     description: "Actors to help with your Medival parties!",
     title: "Fort Knights",

@@ -3,11 +3,7 @@ import BulletinItem from "../Item/BulletinItem";
 import LocalData from "../../../Services/LocalData";
 import { upVote } from "../../../Services/BulletinService";
 import IBulletinData from "../../../Services/IBulletinData";
-
-export interface IBulletinStateProps {
-  items: IBulletinData[] | null;
-  isLoaded: boolean;
-}
+import { IBulletinStateProps } from "../Item/IBulletinStateProps";
 
 const BulletinList: React.FC = () => {
   const [bulletinState, setBulletinState] = useState<IBulletinStateProps>({

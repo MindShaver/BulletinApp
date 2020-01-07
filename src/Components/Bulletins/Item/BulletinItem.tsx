@@ -2,15 +2,7 @@ import React from "react";
 import AvatarImage from "../../../images/avatars/daniel.jpg";
 import ProductImage from "../../../images/products/image-aqua.png";
 import { prependToMemberExpression } from "@babel/types";
-
-export interface IBulletinItemProps {
-  name: string;
-  votes: number;
-  description: string;
-  id: string;
-  onVote: (id: string) => void;
-  removeBulletin: (id: string) => void;
-}
+import { IBulletinItemProps } from "./IBulletinItemProps";
 
 const BulletinItem: React.FC<IBulletinItemProps> = props => {
   return (

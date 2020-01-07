@@ -21,7 +21,9 @@ const BulletinList: React.FC = () => {
     setBulletinState({ items: bulletins, isLoaded: true });
   };
   const handleRemove = (id: string) => {
-    alert(id);
+    const bulletins = bulletinState.items;
+    const filteredBulletins = bulletins!.filter(x => x.id !== id);
+    setBulletinState({ items: filteredBulletins, isLoaded: true });
   };
   return (
     <div>

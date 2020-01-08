@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"; //all of these are importing components to use here from other files
 import BulletinItem from "../Item/BulletinItem";
 import LocalData from "../../../Services/LocalData";
 import { upVote } from "../../../Services/BulletinService";
 import IBulletinData from "../../../Services/IBulletinData";
 import { IBulletinStateProps } from "../Item/IBulletinStateProps";
+import BulletinCreator from "../BulletinCreator";
 
 const BulletinList: React.FC = () => {
   const [bulletinState, setBulletinState] = useState<IBulletinStateProps>({
     items: null,
     isLoaded: false
   });
+
+  const handleSubmit = (data: IBulletinData) => {
+    let bulletins = bulletinState.items;
+    bulletins!.push(data);
+    setBulletinState({ items: bulletins, isLoaded: true });
+  };
 
   useEffect(() => {
     setBulletinState({ items: LocalData, isLoaded: true });
@@ -27,6 +34,7 @@ const BulletinList: React.FC = () => {
   };
   return (
     <div>
+      <BulletinCreator handleSubmit={handleSubmit} />
       <div className="main ui text container">
         <div id="content">
           <div className="ui unstackable items">

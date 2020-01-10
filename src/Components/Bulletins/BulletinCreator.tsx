@@ -8,13 +8,14 @@ export interface IBulletinCreatorProps {
 
 const BulletinCreator: React.FC<IBulletinCreatorProps> = props => {
   const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const submit = (evt: any) => {
     evt.preventDefault();
     const bulletin: IBulletinData = {
       id: uuid.v4(),
       title: title,
-      description: "sdfj",
+      description: description,
       votes: 2
     };
     props.handleSubmit(bulletin);
@@ -27,6 +28,14 @@ const BulletinCreator: React.FC<IBulletinCreatorProps> = props => {
           type="text"
           value={title}
           onChange={e => setTitle(e.target.value)}
+        />
+      </label>
+      <label>
+        Bulletin Description:
+        <input
+          type="text"
+          value={description}
+          onChange={e => setDescription(e.target.value)}
         />
       </label>
       <input type="submit" value="Submit" />
